@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0a0a0a">
 <title>크루레이블 — 풀버전 영상 · 크루 합류 방법</title>
 <meta name="description" content="크루레이블(Crew Label) 풀버전 영상과 크루 합류 방법을 한곳에서 확인하세요.">
 <meta property="og:title" content="크루레이블 — 풀버전 영상 · 크루 합류 방법">
@@ -52,7 +53,7 @@ body {
   background: var(--card);
   border: 0.5px solid var(--line);
   border-radius: 16px;
-  padding: 18px 16px 16px;
+  padding: 18px 14px 14px;
   margin-bottom: 12px;
 }
 .group-head { display: flex; align-items: center; gap: 8px; margin-bottom: 14px; flex-wrap: wrap; }
@@ -68,20 +69,26 @@ body {
 .btn {
   display: block; text-decoration: none;
   border-radius: 12px;
-  padding: 14px 16px;
+  padding: 14px 14px;
   min-height: 52px;
   -webkit-tap-highlight-color: transparent;
   transition: transform 0.08s ease, opacity 0.15s ease;
 }
 .btn:active { transform: scale(0.98); opacity: 0.9; }
 .btn + .btn { margin-top: 8px; }
-.btn-label { display: flex; align-items: center; justify-content: space-between; font-size: clamp(15px, 4.4vw, 17px); font-weight: 500; }
-.btn-label::after { content: '→'; font-size: 0.95em; }
+.btn-label { display: flex; align-items: center; justify-content: space-between; gap: 12px; font-size: clamp(15px, 4.4vw, 17px); font-weight: 500; line-height: 1.4; word-break: keep-all; text-wrap: balance; }
+.btn-label::after { content: '→'; font-size: 0.95em; flex-shrink: 0; }
 .btn-desc { display: block; margin-top: 6px; font-size: clamp(12px, 3.5vw, 13px); line-height: 1.45; word-break: keep-all; text-wrap: balance; }
 
-.btn.primary { background: var(--mint); color: var(--mint-ink); }
+.btn.primary { background: var(--mint); color: var(--mint-ink); container-type: inline-size; }
+/* 풀버전 버튼 제목: 휴대폰 폭에 맞춰 글자 크기가 자동으로 조절되며 항상 한 줄 유지 (최대 17px) */
+.btn-title { display: block; white-space: nowrap; font-weight: 500; line-height: 1.35; }
+.fit-people { font-size: 14px; font-size: min(17px, 5.37cqw); }
+.fit-broadcaster { font-size: 12px; font-size: min(17px, 4.43cqw); }
+.btn.primary .btn-desc { display: flex; align-items: center; justify-content: space-between; text-wrap: wrap; }
+.btn.primary .btn-desc::after { content: '→'; font-size: clamp(15px, 4.4vw, 17px); }
 .btn.primary .btn-desc { color: rgba(10,92,58,0.85); }
-.btn.secondary { background: transparent; color: var(--mint); border: 1px solid rgba(168,240,208,0.55); padding: 15px 16px 13px; }
+.btn.secondary { background: transparent; color: var(--mint); border: 1px solid rgba(168,240,208,0.55); padding: 15px 14px 13px; }
 
 /* ── CHANNEL ── */
 /* 풀버전·합류 버튼보다 한 단계 낮은 강조(회색 버튼), 같은 화살표로 누를 수 있음을 표시 */
@@ -116,8 +123,8 @@ body {
       <span class="who">직장인·자영업자·사업가·대학생 등</span>
     </div>
     <a class="btn primary" href="https://youtu.be/xqZqJNcSQBA">
-      <span class="btn-label">🎬 풀버전 영상 보기</span>
-      <span class="btn-desc">평범한 내가 리스크 없이 방송인이 되는 법</span>
+      <span class="btn-title fit-people">평범한 내가 리스크 없이 방송인이 되는 법</span>
+      <span class="btn-desc">🎬 풀버전 영상 보기</span>
     </a>
     <a class="btn secondary" href="https://crewlabel-rec.github.io/tiktok-people/">
       <span class="btn-label">✍️ 크루 합류 방법</span>
@@ -131,8 +138,8 @@ body {
       <span class="who">연기자·아나운서·개그맨·성우 등</span>
     </div>
     <a class="btn primary" href="https://youtu.be/tmsjUKxpjPg">
-      <span class="btn-label">🎬 풀버전 영상 보기</span>
-      <span class="btn-desc">무명 방송인이 캐릭터를 시장에 축적해야 하는 이유</span>
+      <span class="btn-title fit-broadcaster">무명 방송인이 캐릭터를 시장에 축적해야 하는 이유</span>
+      <span class="btn-desc">🎬 풀버전 영상 보기</span>
     </a>
     <a class="btn secondary" href="https://crewlabel-rec.github.io/tiktok-broadcaster/">
       <span class="btn-label">✍️ 크루 합류 방법</span>
