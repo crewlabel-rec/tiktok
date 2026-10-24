@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#0a0a0a">
+<meta name="theme-color" content="#f5f5f3">
 <title>크루레이블 — 풀버전 영상 · 크루 합류 방법</title>
 <meta name="description" content="크루레이블(Crew Label) 풀버전 영상과 크루 합류 방법을 한곳에서 확인하세요.">
 <meta property="og:title" content="크루레이블 — 풀버전 영상 · 크루 합류 방법">
@@ -29,13 +29,16 @@
   --gold: #f2d27a;      /* 방송인 = 무명백서 도장 계열 골드 */
   --gold-ink: #4a3410;
 }
-html, body { background: var(--bg); }
+/* 바깥 바탕 = 랜딩과 같은 밝은 회색 → 틱톡·인스타 앱 브라우저의 흰 틀과 자연스럽게 이어짐 */
+html, body { background: #f5f5f3; }
 body {
   font-family: 'GMarketSans', -apple-system, BlinkMacSystemFont, 'Pretendard', 'Noto Sans KR', sans-serif;
   color: var(--text);
   -webkit-font-smoothing: antialiased;
 }
-.wrap { max-width: 480px; margin: 0 auto; padding: 24px 16px 40px; }
+.wrap { max-width: 480px; margin: 0 auto; padding: 12px 10px 24px; }
+/* 가운데 검정 카드 (기존 디자인을 그대로 담는 판) */
+.sheet { background: var(--bg); border-radius: 22px; padding: 14px 12px 24px; box-shadow: 0 2px 14px rgba(0,0,0,0.10); }
 
 /* ── HERO ── */
 .hero {
@@ -43,9 +46,9 @@ body {
   padding: 8px 8px 14px;
   background: radial-gradient(120% 80% at 50% 0%, rgba(168,240,208,0.14) 0%, rgba(168,240,208,0) 60%);
   border-radius: 16px;
-  margin-bottom: 14px;
+  margin-bottom: 6px;   /* 로고 아래 여백 축소 (14px → 6px) */
 }
-.logo { width: 300px; max-width: 86%; display: block; margin: -18px auto -10px; }
+.logo { width: 240px; max-width: 69%; display: block; margin: -14px auto -8px; }   /* 기존 300px에서 20% 축소 */
 /* ── ABOUT (채널 링크 아래 소개 한 줄) ── */
 .about { text-align: center; margin-top: 22px; font-size: clamp(13px, 3.6vw, 14px); color: var(--text-sub); line-height: 1.6; word-break: keep-all; }
 .about em { font-style: normal; color: var(--mint); }
@@ -121,6 +124,7 @@ body {
 </head>
 <body>
 <main class="wrap">
+<div class="sheet">
 
   <!-- HERO -->
   <header class="hero">
@@ -169,6 +173,7 @@ body {
   <!-- 맨 아래까지 내려온(아직 망설이는) 사람을 위한 한 줄 -->
   <p class="about">방송 경험이 없어도, 오디션 준비 중이어도<br><em>주 1회 녹화</em>로 함께할 수 있어요</p>
 
+</div>
 </main>
 </body>
 </html>
